@@ -1,8 +1,12 @@
 <app-vehicle-navigation></app-vehicle-navigation>
 <div class="container">
   <div class="row">
-    <div class="col-6 text-center" *ngFor="let vehicle of vehicles">
-      <a [routerLink]="['/vehicles', vehicle.licensePlate]" class="item-link">
+    <div class="col-4 text-center" *ngFor="let vehicle of vehicles">
+      <a
+        [routerLink]="['/vehicles', vehicle.licensePlate]"
+        [state]="{ vehicle: vehicle }"
+        class="item-link"
+      >
         <h4 class="p-3">{{ vehicle.licensePlate }}</h4>
       </a>
     </div>

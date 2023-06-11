@@ -1,34 +1,112 @@
 <app-vehicle-navigation></app-vehicle-navigation>
-<p>vehicle works!</p>
-<button class="btn btn-primary" (click)="onEdit()">Bewerk</button>
-<button class="btn btn-primary" (click)="onDelete()">Verwijderen</button>
-<!-- <div class="container">
-    <div class="row">
-      <div class="col-md-12 text-center values">
-        <div class="form-group">
-          <label for="cardNumber">Kaartnummer:</label>
-          <span id="cardNumber"> Gascard.cardNumber</span>
-        </div>
-        <div class="form-group">
-          <label for="experiationDate">Vervaldatum:</label>
-          <span id="experiationDate"> Gascard.experiationDate</span>
-        </div>
-        <div class="form-group">
-          <label for="pincode">Pincode:</label>
-          <span id="pincode"> Gascard.pincode</span>
-        </div>
-        <div class="form-group">
-          <label for="blocked">Geblokkeerd:</label>
-          <span id="blocked"> Gascard.blocked</span>
-        </div>
-        <div class="form-group">
-          <label for="fuelType">Brandstof:</label>
-          <span id="fuelType"> Gascard.fuelType</span>
-        </div>
-        <div class="form-group">
-          <label for="driverId">Bestuurder:</label>
-          <span id="driverId"> Gascard.driverId</span>
-        </div>
-      </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2 foto">
+      <img src="https://img.favpng.com/17/17/0/silhouette-person-photography-png-favpng-EnjtqzHjWaG5LmhpxzCt8evMC.jpg" alt="empty" />
     </div>
-  </div> -->
+    <div class="col-md-10">
+      <form>
+        <div class="form-group row">
+          <label for="staticLicensePlate" class="col-sm-2 col-form-label"
+            >Nummerplaat:</label
+          >
+          <div class="col-sm-10">
+            <input
+              type="text"
+              readonly
+              class="form-control-plaintext"
+              id="staticLicensePlate"
+              [value]="vehicle.licensePlate"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="staticVin" class="col-sm-2 col-form-label"
+            >Chassisnummer:</label
+          >
+          <div class="col-sm-10">
+            <input
+              type="text"
+              readonly
+              class="form-control-plaintext"
+              id="staticVin"
+              [value]="vehicle.vin"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="staticType" class="col-sm-2 col-form-label"
+            >Type wagen:</label
+          >
+          <div class="col-sm-10">
+            <input
+              type="text"
+              readonly
+              class="form-control-plaintext"
+              id="staticType"
+              [value]="vehicle.vehicleType"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="staticFuelType" class="col-sm-2 col-form-label"
+            >Brandstof:</label
+          >
+          <div class="col-sm-10">
+            <input
+              type="text"
+              readonly
+              class="form-control-plaintext"
+              id="staticFuelType"
+              [value]="vehicle.fuelType"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="staticColor" class="col-sm-2 col-form-label"
+            >Kleur:</label
+          >
+          <div class="col-sm-10">
+            <input
+              type="text"
+              readonly
+              class="form-control-plaintext"
+              id="staticColor"
+              [value]="vehicle.color"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="staticDoors" class="col-sm-2 col-form-label"
+            >Aantal deuren:</label
+          >
+          <div class="col-sm-10">
+            <input
+              type="number"
+              readonly
+              class="form-control-plaintext"
+              id="staticDoors"
+              [value]="vehicle.doors"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="staticDriver" class="col-sm-2 col-form-label">
+            Bestuurder:</label
+          >
+          <div class="col-sm-10">
+            <input
+              type="text"
+              readonly
+              class="form-control-plaintext"
+              id="staticDriver"
+              [value]="driver.firstName + ' ' + driver.lastName"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <button class="btn btn-primary" (click)="onEdit()" >Bewerk</button>
+  <button class="btn btn-primary" (click)="onDelete()">Verwijderen</button>
+</div>

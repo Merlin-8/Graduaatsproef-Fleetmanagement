@@ -1,1 +1,106 @@
-<p>vehicle-edit works!</p>
+<app-vehicle-navigation></app-vehicle-navigation>
+<div class="container">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group row">
+      <label for="staticLicensePlate" class="col-sm-2 col-form-label"
+        >Nummerplaat:</label
+      >
+      <div class="col-sm-10">
+        <input
+          type="text"
+          class="form-control"
+          id="staticLicensePlate"
+          [(ngModel)]="vehicle.licensePlate"
+          name="vehicle.licensePlate"
+          [ngModelOptions]="{ standalone: true }"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="staticVin" class="col-sm-2 col-form-label"
+        >Chassisnummer:</label
+      >
+      <div class="col-sm-10">
+        <input
+          type="text"
+          class="form-control-plaintext"
+          id="staticVin"
+          readonly
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="staticType" class="col-sm-2 col-form-label"
+        >Type wagen:</label
+      >
+      <div class="col-sm-10">
+        <input
+          type="text"
+          class="form-control-plaintext"
+          readonly
+          id="staticType"
+          [value]="vehicle.vehicleType"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="staticFuelType" class="col-sm-2 col-form-label"
+        >Brandstof:</label
+      >
+      <div class="col-sm-10">
+        <input
+          type="text"
+          class="form-control-plaintext"
+          id="staticFuelType"
+          readonly
+          [value]="vehicle.fuelType"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="staticColor" class="col-sm-2 col-form-label">Kleur:</label>
+      <div class="col-sm-10">
+        <input
+          type="text"
+          class="form-control"
+          id="staticColor"
+          [(ngModel)]="vehicle.color"
+          [ngModelOptions]="{ standalone: true }"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="staticDoors" class="col-sm-2 col-form-label"
+        >Aantal deuren:</label
+      >
+      <div class="col-sm-10">
+        <input
+          type="number"
+          class="form-control-plaintext"
+          id="staticDoors"
+          readonly
+          [value]="vehicle.doors"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="drivers" class="col-sm-2 col-form-label">
+        Bestuurder: ({{ driver.firstName }} {{ driver.lastName }})</label
+      >
+      <div class="col-sm-10">
+        <select name="drivers" id="" [(ngModel)]="driver">
+          <option value="">Selecteer een bestuurder</option>
+          <option
+            *ngFor="let driver of availableDrivers"
+            [(ngModel)]="vehicle.driverId"
+            [ngModelOptions]="{ standalone: true }"
+          >
+            {{ driver.firstName }} {{ driver.lastName }}
+          </option>
+        </select>
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Opslaan</button>
+    <button class="btn btn-primary" (click)="onCancel()">Annuleren</button>
+  </form>
+</div>

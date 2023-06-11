@@ -1,0 +1,15 @@
+.container {
+  background-color: #343a40;
+  border-radius: 10px;
+  color: white;
+  width: 80%;
+  justify-content: center;
+}
+
+.container input {
+  color: white;
+}
+
+.foto img{
+    height: 150px;
+}
