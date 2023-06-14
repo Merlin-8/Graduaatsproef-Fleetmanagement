@@ -100,6 +100,7 @@ export class VehicleEditComponent implements OnInit {
     } catch (error) {
       console.error('Error while updating vehicle:', error);
     }
+    this.location.back();
   }
 
   onCancel() {

@@ -1,12 +1,14 @@
 <app-gascard-navigation></app-gascard-navigation>
 <div class="container">
-    <div class="row">
-        <div class="col-4 text-center" *ngFor="let gascard of gascards">
-            <a 
-            [routerLink]="['/gascards', gascard.id]" 
-            class="item-link">
-                <h4 class="p-3">{{ gascard.cardNumber }}</h4>
-            </a>
-        </div>
+  <div class="row">
+    <div class="col-4 text-center" *ngFor="let gascard of gascards">
+      <a
+        [routerLink]="['/gascards', gascard.cardNumber]"
+        [state]="{ gascard: gascard }"
+        class="item-link"
+      >
+        <h4 class="p-3">{{ gascard.cardNumber }}</h4>
+      </a>
     </div>
+  </div>
 </div>

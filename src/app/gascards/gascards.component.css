@@ -1,0 +1,13 @@
+.container {
+  background-color: #343a40;
+  border-radius: 10px;
+}
+.item-link {
+  text-decoration: none;
+  color: white;
+}
+
+h4:hover {
+  background-color: #404954;
+  border-radius: 10px;
+}

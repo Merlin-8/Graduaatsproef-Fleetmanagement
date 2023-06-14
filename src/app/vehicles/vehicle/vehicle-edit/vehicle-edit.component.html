@@ -1,5 +1,5 @@
 <app-vehicle-navigation></app-vehicle-navigation>
-<div class="container">
+<div class="container p-3">
   <form (ngSubmit)="onSubmit()">
     <div class="form-group row">
       <label for="staticLicensePlate" class="col-sm-2 col-form-label"
@@ -25,6 +25,8 @@
           type="text"
           class="form-control-plaintext"
           id="staticVin"
+          name="vehicle.vin"
+          [(ngModel)] = "vehicle.vin"
           readonly
         />
       </div>
@@ -92,15 +94,15 @@
           <option value="">Selecteer een bestuurder</option>
           <option
             *ngFor="let driver of availableDrivers"
-            [(ngModel)]="vehicle.driverId"
-            [ngModelOptions]="{ standalone: true }"
           >
             {{ driver.firstName }} {{ driver.lastName }}
           </option>
         </select>
       </div>
     </div>
-    <button class="btn btn-primary" type="submit">Opslaan</button>
-    <button class="btn btn-primary" (click)="onCancel()">Annuleren</button>
+<div class="text-center">
+  <button class="btn btn-primary m-3" type="submit">Opslaan</button>
+  <button class="btn btn-primary m-3" (click)="onCancel()">Annuleren</button>
+</div>
   </form>
 </div>

@@ -1,12 +1,12 @@
 <app-vehicle-navigation></app-vehicle-navigation>
-<div class="container">
-  <div class="row">
-    <div class="col-md-2 foto">
+<div class="container text-center">
+  <div class="row text-center">
+    <!-- <div class="col-md-4 foto align-items-center">
       <img src="https://img.favpng.com/17/17/0/silhouette-person-photography-png-favpng-EnjtqzHjWaG5LmhpxzCt8evMC.jpg" alt="empty" />
-    </div>
-    <div class="col-md-10">
-      <form>
-        <div class="form-group row">
+    </div> -->
+    <div class="col-md-12 text-center">
+      <form class="">
+        <div class="form-group row text-center">
           <label for="staticLicensePlate" class="col-sm-2 col-form-label"
             >Nummerplaat:</label
           >
@@ -107,6 +107,9 @@
       </form>
     </div>
   </div>
-  <button class="btn btn-primary" (click)="onEdit()" >Bewerk</button>
-  <button class="btn btn-primary" (click)="onDelete()">Verwijderen</button>
+  <button class="btn btn-primary m-3" (click)="onEdit()">Bewerk</button>
+  <button class="btn btn-primary m-3 disabled" (click)="onDelete()">
+    Verwijderen
+  </button>
+  <button class="btn btn-primary m-3" (click)="onBack()">Terug</button>
 </div>

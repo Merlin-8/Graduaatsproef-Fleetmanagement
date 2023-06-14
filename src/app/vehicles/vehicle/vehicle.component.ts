@@ -3,6 +3,7 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
 // import { Vehicle } from './../vehicle.model';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-vehicle',
@@ -17,7 +18,8 @@ export class VehicleComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private http: HttpClient
+    private http: HttpClient,
+    private location: Location
   ) {
     this.vin = history.state.vehicle.vin;
   }
@@ -58,5 +60,9 @@ export class VehicleComponent implements OnInit {
 
   onDelete() {
     this.router.navigate(['kopen']);
+  }
+
+  onBack() {
+    this.location.back();
   }
 }

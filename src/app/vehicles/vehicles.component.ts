@@ -12,11 +12,10 @@ import { HttpClient } from '@angular/common/http';
 export class VehiclesComponent implements OnInit {
   vehicles: any[] = [];
 
-
   constructor(private http: HttpClient) {
     this.getAllVehicles();
   }
-
+  //TODO: ZOekfunctie creëren
   ngOnInit() {}
 
   getAllVehicles() {
@@ -27,4 +26,5 @@ export class VehiclesComponent implements OnInit {
         this.vehicles = resultData;
       });
   }
+  
 }
